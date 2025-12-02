@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Knob } from './components/knob/Knob'
 import { Slider } from './components/slider/Slider'
-import './App.css'
 
 function App() {
   const [value1, setValue1] = useState(0)
