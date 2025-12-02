@@ -21,16 +21,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # ← pnpm を先に入れる
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          # package.json に "packageManager": "pnpm@9.x" があれば
+          # version は省略してもOK
+
+      # ← そのあとで Node + キャッシュ
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: "pnpm"
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 9
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
