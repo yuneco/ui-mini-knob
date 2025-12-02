@@ -1,5 +1,5 @@
 import { type FC } from 'react'
-import { ACTIVE_COLOR, TRACK_COLOR } from './knob/defs/config'
+import { TRACK_COLOR } from './knob/defs/config'
 
 interface ToggleProps {
   value: boolean
@@ -23,7 +23,7 @@ export const Toggle: FC<ToggleProps> = ({
       style={{
         display: 'flex',
         alignItems: 'center',
-        gap: '8px',
+        gap: '4px',
         cursor: 'pointer',
         userSelect: 'none',
       }}
@@ -33,9 +33,9 @@ export const Toggle: FC<ToggleProps> = ({
         <span
           style={{
             fontSize: '12px',
-            color: value ? '#333' : '#999',
-            fontWeight: value ? 600 : 400,
+            color: value ? '#333' : '#aaa',
             transition: 'all 0.2s ease',
+            fontWeight: 'bold',
           }}
         >
           {leftLabel}
@@ -71,9 +71,9 @@ export const Toggle: FC<ToggleProps> = ({
         <span
           style={{
             fontSize: '12px',
-            color: value ? '#999' : '#333',
-            fontWeight: value ? 400 : 600,
+            color: value ? '#aaa' : '#333',
             transition: 'all 0.2s ease',
+            fontWeight: 'bold',
           }}
         >
           {rightLabel}
